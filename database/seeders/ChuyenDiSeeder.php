@@ -33,10 +33,10 @@ class ChuyenDiSeeder extends Seeder
 
     public function run(): void
     {
-        Schema::disableForeignKeyConstraints();
-        DB::table('chuyen_dis')->delete();
-        // Schema::enableForeignKeyConstraints();
-
+    public function run(): void
+    {
+        // Data cleanup is handled by DatabaseSeeder
+        
         $operatorLookup = $this->buildLookupMap(
             DB::table('nha_van_hanhs')->get(['id', 'ten'])
         );
