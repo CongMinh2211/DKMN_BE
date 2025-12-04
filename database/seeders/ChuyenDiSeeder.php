@@ -178,6 +178,8 @@ class ChuyenDiSeeder extends Seeder
 
         $routes = [];
         $provinceIds = array_keys($provinceNames);
+        // Limit to 10 provinces for demo/production to avoid timeout on free tier
+        $provinceIds = array_slice($provinceIds, 0, 10);
         $count = count($provinceIds);
 
         for ($i = 0; $i < $count; $i++) {
