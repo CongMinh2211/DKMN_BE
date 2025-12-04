@@ -15,9 +15,6 @@ class GheSeeder extends Seeder
 {
     public function run(): void
     {
-
-    public function run(): void
-    {
         // Data cleanup is handled by DatabaseSeeder
 
         $now = now();

@@ -33,8 +33,6 @@ class ChuyenDiSeeder extends Seeder
 
     public function run(): void
     {
-    public function run(): void
-    {
         // Data cleanup is handled by DatabaseSeeder
         
         $operatorLookup = $this->buildLookupMap(
