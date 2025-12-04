@@ -63,15 +63,14 @@ class GheSeeder extends Seeder
                 'ngay_tao' => $now,
             ];
 
-            if (count($chunk) >= 100) {
-                DB::reconnect();
+            // Increase chunk size to 1000 for fewer DB calls
+            if (count($chunk) >= 1000) {
                 DB::table('ghes')->insert($chunk);
                 $chunk = [];
             }
         }
 
         if (!empty($chunk)) {
-            DB::reconnect();
             DB::table('ghes')->insert($chunk);
         }
     }
